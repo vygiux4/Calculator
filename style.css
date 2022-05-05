@@ -1,8 +1,61 @@
-.body {
-    background-color: blue;
-    color-scheme: blue;
+body {
+    display: flex;
+    width: 1900x;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
 }
 
-container {
-    background-color: blue;
+.container {
+    height: 400px;
+    width: 300px;
+    display: flex;
+   flex-direction: column;
+   outline-style: solid;
+   outline-width: 1px;
+}
+.display {
+    width: 240px;
+    font-size: 30px;
+    outline-style: solid;
+   outline-width: 1px;
+   background-color: lightblue;
+   
+}
+.displayer {
+   
+    width: 200x;
+    height: 70px;
+    display: flex;
+   align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+ background-color: lightgrey;
+ 
+
+}
+
+
+
+
+.baton {
+    
+    display: flex;
+    height: 330px;
+    
+}
+.bonk{ 
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+  align-content:  center;
+   justify-content: center;
+    background-color: lightgray;
+   
+}
+
+.num{
+    
+    height: 70px;
+    width: 70px;
 }
