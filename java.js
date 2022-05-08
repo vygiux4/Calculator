@@ -30,8 +30,8 @@ const operate = function(num1,oper,num2){
     }
     
 }
-let xxix= 2+2
-console.log(operate([2,'+',2]))
+
+
 
 const num1 = document.querySelector('#num1')
 const num2 = document.querySelector('#num2')
@@ -47,58 +47,154 @@ const numMupltiply = document.querySelector('#numMulti')
 const numDivide = document.querySelector('#numDivide')
 const numMinus = document.querySelector('#numMinus')
 const numPlus = document.querySelector('#numPlus')
+const numClear = document.querySelector('#zeroout')
 const numEqual = document.querySelector('#numEqual')
 
+const bonk = document.querySelector('#display')
+    let element = document.createElement('div')
+    element.innerHTML = ''
 const display = document.querySelector('.display')
 
 let store = []
+let numbers = []
+
+
 
 num1.onclick = function(){
-    return store.push(1) && display.append(1) 
-    
+
+    numbers.push(1); display.append(1)
+ 
 }
-console.log(store)
+   
 
 num2.onclick = function(){
-    return store.push(1) && display.append(2)
+
+    numbers.push(2);  display.append(2)
+
+    
 }
 num3.onclick = function(){
-    return display.append(3)
+    numbers.push(3); display.append(3);  
+    
 }
 num4.onclick = function(){
-    return display.append(4)
-}
+    numbers.push(4) && display.append(4);  
+   
+    }
 num5.onclick = function(){
-    return display.append(5)
+    numbers.push(5); display.append(5);  
+    
 }
 num6.onclick = function(){
-    return display.append(6)
+    numbers.push(6); display.append(6);  
+   
 }
 num7.onclick = function(){
-    return display.append(7)
+    numbers.push(7); display.append(7);  
+   
 }
 num8.onclick = function(){
-    return display.append(8)
+    numbers.push(8); display.append(8);  
+
 }
 num9.onclick = function(){
-    return display.append(9)
+    numbers.push(9); display.append(9); 
 }
 num0.onclick = function(){
-    return display.append(0)
+    numbers.push(0);  display.append(0);  
+ 
 }
 numMupltiply.onclick = function(){
-    return store.push('*') &&  display.append('*')
+    let empty =[]
+
+    let join = numbers.join('')
+    if (numbers.length >= 1){
+    let joinnumber = parseInt(join)
+    store.push(joinnumber)
+    }
+    numbers = empty
+
+    display.append('*')
+
+     if (store.length == 3 ){
+        store.push(operate(store[0],store[1],store[2])) && store.splice(0,3)
+    } 
+    store.push('*') 
 }
 numDivide.onclick = function(){
-    return display.append('/')
+    let empty =[]
+
+    let join = numbers.join('')
+    if (numbers.length >= 1){
+    let joinnumber = parseInt(join)
+    store.push(joinnumber)
+    }
+    numbers = empty
+
+     display.append('/');  
+
+    if (store.length == 3 ){
+        store.push(operate(store[0],store[1],store[2])) && store.splice(0,3)
+    } 
+    store.push('/')
 }
 numMinus.onclick = function(){
-    return display.append('-')
+    let empty =[]
+
+    let join = numbers.join('')
+    if (numbers.length >= 1){
+    let joinnumber = parseInt(join)
+    store.push(joinnumber)
+    }
+    numbers = empty
+
+    display.append('-');  
+
+    if (store.length == 3 ){
+        store.push(operate(store[0],store[1],store[2])) && store.splice(0,3)
+    } 
+
+    store.push('-')
 }
+
+
 numPlus.onclick = function(){
-    return display.append('+')
+    let empty =[]
+
+    let join = numbers.join('')
+    if (numbers.length >= 1){
+    let joinnumber = parseInt(join)
+    store.push(joinnumber)
+    }
+    numbers = empty
+    display.append('+');
+     
+    if (store.length == 3 ){
+        store.push(operate(store[0],store[1],store[2])) && store.splice(0,3)
+    } 
+    store.push('+');
 }
+
+ numClear.onclick = function(){
+    
+display.replaceChildren(element)
+store.splice(0,store.length)
+display.append(store)
+    }
+
 numEqual.onclick = function(){
-    return console.log(store.push(operate(store))) 
+    let empty =[]
+
+    let join = numbers.join('')
+    if (numbers.length >= 1){
+    let joinnumber = parseInt(join)
+    store.push(joinnumber)
+    numbers = empty
+    }
+
+    if (store.length == 3 ){
+        store.push(operate(store[0],store[1],store[2])) && store.splice(0,3)
+    } 
+      display.append('=');
+    display.append(store)
 }
-console.log(store)

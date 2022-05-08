@@ -16,6 +16,7 @@ body {
 }
 .display {
     width: 240px;
+    height: 40px;
     font-size: 30px;
     outline-style: solid;
    outline-width: 1px;
