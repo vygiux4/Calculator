@@ -52,6 +52,7 @@ const numMinus = document.querySelector('#numMinus')
 const numPlus = document.querySelector('#numPlus')
 const numDecimal = document.querySelector('#decimal')
 const numEqual = document.querySelector('#numEqual')
+const numClear = document.querySelector('#numclear')
 
 const bonk = document.querySelector('#display')
     let element = document.createElement('div')
@@ -109,6 +110,9 @@ num0.onclick = function(){
 }
 
 numDecimal.onclick = function(){
+    if (numbers.includes('.')){
+        return 
+    }
     numbers.push('.');  display.append('.');  
  
 }
@@ -186,12 +190,12 @@ numPlus.onclick = function(){
     store.push('+');
 }
 
-//  numClear.onclick = function(){
+ numClear.onclick = function(){
     
-// display.replaceChildren(element)
-// store.splice(0,store.length)
-// display.append(store)
-//     }
+display.replaceChildren(element)
+store.splice(0,store.length)
+display.append(store)
+    }
 
 numEqual.onclick = function(){
     let empty =[]
