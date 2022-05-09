@@ -26,6 +26,9 @@ const operate = function(num1,oper,num2){
         return calcMultiply(num1,num2)
     }
     if (oper == '/'){
+        if (num2 == 0){
+            return display.append('ERORR')
+        }
         return calcDivide(num1,num2)
     }
     
@@ -184,17 +187,19 @@ display.append(store)
 
 numEqual.onclick = function(){
     let empty =[]
-
+     
     let join = numbers.join('')
     if (numbers.length >= 1){
     let joinnumber = parseInt(join)
     store.push(joinnumber)
     numbers = empty
     }
-
+    if (store.length <= 2){
+       return  display.append('=no bueno hose')
+    }
     if (store.length == 3 ){
         store.push(operate(store[0],store[1],store[2])) && store.splice(0,3)
     } 
       display.append('=');
-    display.append(store)
+    display.append(Math.round(store*10)/10)
 }
