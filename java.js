@@ -50,7 +50,7 @@ const numMupltiply = document.querySelector('#numMulti')
 const numDivide = document.querySelector('#numDivide')
 const numMinus = document.querySelector('#numMinus')
 const numPlus = document.querySelector('#numPlus')
-const numClear = document.querySelector('#zeroout')
+const numDecimal = document.querySelector('#decimal')
 const numEqual = document.querySelector('#numEqual')
 
 const bonk = document.querySelector('#display')
@@ -107,12 +107,20 @@ num0.onclick = function(){
     numbers.push(0);  display.append(0);  
  
 }
+
+numDecimal.onclick = function(){
+    numbers.push('.');  display.append('.');  
+ 
+}
+
+
+
 numMupltiply.onclick = function(){
     let empty =[]
 
     let join = numbers.join('')
     if (numbers.length >= 1){
-    let joinnumber = parseInt(join)
+    let joinnumber = parseFloat(join)
     store.push(joinnumber)
     }
     numbers = empty
@@ -129,7 +137,7 @@ numDivide.onclick = function(){
 
     let join = numbers.join('')
     if (numbers.length >= 1){
-    let joinnumber = parseInt(join)
+    let joinnumber = parseFloat(join)
     store.push(joinnumber)
     }
     numbers = empty
@@ -146,7 +154,7 @@ numMinus.onclick = function(){
 
     let join = numbers.join('')
     if (numbers.length >= 1){
-    let joinnumber = parseInt(join)
+    let joinnumber = parseFloat(join)
     store.push(joinnumber)
     }
     numbers = empty
@@ -166,7 +174,7 @@ numPlus.onclick = function(){
 
     let join = numbers.join('')
     if (numbers.length >= 1){
-    let joinnumber = parseInt(join)
+    let joinnumber = parseFloat(join)
     store.push(joinnumber)
     }
     numbers = empty
@@ -178,19 +186,19 @@ numPlus.onclick = function(){
     store.push('+');
 }
 
- numClear.onclick = function(){
+//  numClear.onclick = function(){
     
-display.replaceChildren(element)
-store.splice(0,store.length)
-display.append(store)
-    }
+// display.replaceChildren(element)
+// store.splice(0,store.length)
+// display.append(store)
+//     }
 
 numEqual.onclick = function(){
     let empty =[]
      
     let join = numbers.join('')
     if (numbers.length >= 1){
-    let joinnumber = parseInt(join)
+    let joinnumber = parseFloat(join)
     store.push(joinnumber)
     numbers = empty
     }

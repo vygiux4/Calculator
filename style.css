@@ -37,8 +37,6 @@ body {
 }
 
 
-
-
 .baton {
     
     display: flex;
@@ -53,10 +51,24 @@ body {
    justify-content: center;
     background-color: lightgray;
    
+   
 }
 
 .num{
-    
+    border-radius: 25px;
     height: 70px;
     width: 70px;
+}
+
+.belowdisplay {
+    background-color: lightgrey;
+ display: flex;
+ justify-content: space-around;
+}
+
+.doublenum {
+    border-radius: 25px;
+    height: 30px;
+    width: 80px;
+    justify-content: space-around;
 }
