@@ -53,6 +53,7 @@ const numPlus = document.querySelector('#numPlus')
 const numDecimal = document.querySelector('#decimal')
 const numEqual = document.querySelector('#numEqual')
 const numClear = document.querySelector('#numclear')
+const numBack = document.querySelector('#numback')
 
 const bonk = document.querySelector('#display')
     let element = document.createElement('div')
@@ -63,6 +64,7 @@ let store = []
 let numbers = []
 
 
+   
 
 num1.onclick = function(){
 
@@ -108,6 +110,18 @@ num0.onclick = function(){
     numbers.push(0);  display.append(0);  
  
 }
+numBack.onclick = function(){
+
+    display.removeChild(display.lastChild);
+    let length = store[store.length -1]
+    if (length = ('*') ){
+        numbers.splice(-1,1);
+        return
+    }
+    
+    numbers.splice(-1,1)
+
+    }
 
 numDecimal.onclick = function(){
     if (numbers.includes('.')){
@@ -194,6 +208,7 @@ numPlus.onclick = function(){
     
 display.replaceChildren(element)
 store.splice(0,store.length)
+numbers.splice(0,numbers.length)
 display.append(store)
     }
 
