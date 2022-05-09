@@ -55,6 +55,12 @@ body {
 }
 
 .num{
+    background-color: white;
+    border-radius: 25px;
+    height: 70px;
+    width: 70px;
+}
+.numop{
     border-radius: 25px;
     height: 70px;
     width: 70px;
@@ -71,4 +77,29 @@ body {
     height: 30px;
     width: 80px;
     justify-content: space-around;
+}
+
+
+#numback {
+    background-color:royalblue
+}
+
+#numclear {
+    background-color: chocolate;
+}
+
+#numMulti{
+    background-color: rgb(105, 204, 7)
+}
+#numDivide{
+    background-color: chartreuse
+}
+#numPlus {
+    background-color: chartreuse
+}
+#numDivide{
+    background-color: chartreuse
+}
+#numMinus{
+    background-color: chartreuse
 }
